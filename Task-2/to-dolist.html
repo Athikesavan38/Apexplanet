@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="icon1.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-100 to-white min-h-screen text-gray-800 p-6"
+  >
+    <!-- Header -->
+    <header class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-blue-700 mb-2">
+        📝PlanPilot To-Do List
+      </h1>
+      <p class="text-gray-600">
+        Add, complete, delete, edit tasks with priority
+      </p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="max-w-xl mx-auto bg-white shadow-xl rounded-2xl p-6">
+      <!-- Input Section -->
+      <div class="flex gap-2 mb-6">
+        <input
+          type="text"
+          id="todoInput"
+          placeholder="Enter a new task..."
+          class="flex-1 border border-gray-300 p-2 rounded-md focus:outline-blue-500"
+        />
+        <select
+          id="prioritySelect"
+          class="border border-gray-300 rounded-md px-2 py-2 focus:outline-blue-500"
+        >
+          <option value="Low">Low Priority</option>
+          <option value="Medium" selected>Medium Priority</option>
+          <option value="High">High Priority</option>
+        </select>
+        <button
+          onclick="addTask()"
+          class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+        >
+          Add
+        </button>
+      </div>
+
+      <!-- Filter & Clear Completed -->
+      <div class="flex justify-between items-center mb-4 text-gray-700">
+        <div>
+          <button
+            onclick="setFilter('all')"
+            id="filter-all"
+            class="filter-btn font-semibold"
+          >
+            All
+          </button>
+          <button
+            onclick="setFilter('pending')"
+            id="filter-pending"
+            class="filter-btn ml-2"
+          >
+            Pending
+          </button>
+          <button
+            onclick="setFilter('completed')"
+            id="filter-completed"
+            class="filter-btn ml-2"
+          >
+            Completed
+          </button>
+        </div>
+        <button onclick="clearCompleted()" class="text-red-600 hover:underline">
+          Clear Completed
+        </button>
+      </div>
+
+      <!-- Task List -->
+      <ul id="todoList" class="space-y-3"></ul>
+
+      <!-- Task Count -->
+      <div class="mt-4 text-sm text-gray-600" id="taskCount"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
