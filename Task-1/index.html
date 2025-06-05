@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting Card</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="card" id="greeting-card">
+      <h1 id="birthday-heading">Happy Birthday!</h1>
+
+      <p class="message">
+        May your day be filled with love, laughter, and unforgettable moments.
+        Here's to another year of chasing dreams and making beautiful memories.
+        🎂✨
+      </p>
+
+      <div class="card-links">
+        <button onclick="sendCard()">Send Card</button>
+        <button onclick="openPopup()">Share on Social Media</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+      <p>Your card is now shared on Social Media 🎉</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
