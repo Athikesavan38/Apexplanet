@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title> Quiz With Multiple Questions</title>
+<link rel="icon" href="icon1.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="quiz-container">
+
+  
+  <div class="quiz_selector" id="category-selector">
+    <h2>Pick a category to test your knowledge</h2>
+    <button onclick="selectQuiz('webdev')">Web Development</button>
+    <button onclick="selectQuiz('css')">CSS</button>
+    <button onclick="selectQuiz('py')">python</button>
+  </div>
+
+  
+  <div id="quiz-content" style="display:none;">
+    <div class="progress-bar" aria-label="Quiz progress">
+      <div class="progress-bar-fill" id="progress-bar-fill"></div>
+    </div>
+
+    <div id="question-container" aria-live="polite" aria-atomic="true">
+      <div id="timer" aria-label="Time remaining">15s</div>
+      <h2 id="question-text"></h2>
+      <ul class="answers" id="answers-list" role="list"></ul>
+    </div>
+
+    <div class="buttons">
+      <button id="prev-btn" disabled>Previous</button>
+      <button id="next-btn" disabled>Next</button>
+    </div>
+
+    <div id="result" style="display:none;" aria-live="polite">
+      <h2>Your Score: <span id="score"></span> / <span id="total-questions"></span></h2>
+
+      <button id="restart-btn">Restart Quiz</button>
+      <button id="toggle-review">Hide Review</button>
+
+      <div id="congrats-message" style="display:none;">🎉 Congratulations! You did great! 👑</div>
+
+      <div id="review">
+        <h3>Review Your Answers</h3>
+        <div id="review-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
