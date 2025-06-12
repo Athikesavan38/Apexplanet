@@ -1,0 +1,5 @@
+.scale-on-hover:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+/* remaining of all css used by tailwind css */

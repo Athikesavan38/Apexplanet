@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EliteMart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./asserts/logo.jpeg">
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-blue-700 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">EliteMart</h1>
+    <div class="relative cursor-pointer flex items-center gap-4">
+      <button id="resetBtn" class="bg-red-600 text-white px-3 py-2 rounded flex items-center gap-1">🔄 Reset</button>
+      <a href="c.html" class="bg-white text-blue-700 p-2 rounded-full relative">
+        🛒
+        <span id="cartCount" class="absolute -top-2 -right-2 text-xs bg-red-600 rounded-full px-1">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <section class="p-4 flex flex-wrap gap-4 justify-between bg-white shadow-md">
+    <input id="searchInput" type="text" placeholder="Search..." class="p-2 border rounded" />
+    <div class="flex gap-3 items-center">
+      <label><input type="checkbox" class="category" value="electronics"> Electronics</label>
+      <label><input type="checkbox" class="category" value="clothing"> Clothing</label>
+      <label><input type="checkbox" class="category" value="books"> Books</label>
+    </div>
+    <div class="flex items-center gap-2">
+      <label>Price:</label>
+      <input id="priceRange" type="range" min="0" max="1200" step="10" value="1200">
+      <span id="priceValue">₹1200</span>
+    </div>
+    <select id="priceSort" class="p-2 border rounded">
+      <option value="default">Sort</option>
+      <option value="lowToHigh">Low to High</option>
+      <option value="highToLow">High to Low</option>
+    </select>
+  </section>
+
+  <!-- Product Grid -->
+  <main id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6"></main>
+
+  <!-- Modal -->
+  <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 card">
+    <div class="bg-white p-6 rounded shadow-xl w-11/12 md:w-2/3 lg:w-1/2">
+      <div class="flex justify-between items-center mb-4">
+        <h2 id="modalTitle" class="text-xl font-bold"></h2>
+        <button onclick="closeModal()" class="text-red-600">✖</button>
+      </div>
+      <img id="modalImage" src="" class="w-full h-64 object-cover rounded mb-4">
+      <p id="modalCategory" class="text-gray-500"></p>
+      <p id="modalPrice" class="text-blue-600 font-bold text-lg"></p>
+      <button id="modalAddBtn" class="mt-4 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded">Add to Cart</button>
+      <div class="mt-6">
+        <h3 class="font-bold mb-2">Related Items</h3>
+        <div id="relatedItems" class="grid grid-cols-2 gap-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
